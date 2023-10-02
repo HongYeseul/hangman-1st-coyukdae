@@ -16,8 +16,8 @@ export default function Hangman(){
     const images = [img0, img1, img2, img3, img4, img5, img6, img7, img8]
     let [정답, 정답변경] = useState('hello');
     let [추측알파벳, 추측알파벳추가] = useState(new Set());
-
     let [행맨상태, 행맨상태변경] = useState(0);
+
     let [틀린횟수, 틀린횟수변경] = useState(0)
     
     // resetGame(){
@@ -26,13 +26,13 @@ export default function Hangman(){
     //     })
     // }
     function ABCbuttonClick(abc, props){
-        btnDisabled(abc)
         let 알파벳배열 = 정답.split("")
-        // props.행맨상태변경(abc)
+        추측알파벳추가(추측알파벳.add(abc));
         if(!알파벳배열.includes(abc)){
             틀린횟수변경(틀린횟수+1);
         }
-        추측알파벳추가(추측알파벳.add(abc));
+        else 틀린횟수변경(틀린횟수);
+        btnDisabled(abc)
     }
 
     function guessedWord() {
@@ -47,7 +47,7 @@ export default function Hangman(){
             key={index}
             value={abc}
             id={"btn_"+abc}
-            onClick={(e)=>ABCbuttonClick(abc, 행맨상태변경={행맨상태변경})}
+            onClick={(e)=>ABCbuttonClick(abc)}
             >
             {abc}
             </button>
@@ -59,7 +59,8 @@ export default function Hangman(){
             <h1>Hangman</h1>
             <img src={images[틀린횟수]} style={{width:"20%"}}></img>
 
-            { 정답 === guessedWord().join("") ? <p>You WIN!</p> :
+            {
+            정답 === guessedWord().join("") ? <p>You WIN!</p> :
 
             (틀린횟수 === 8 ?
             <div>
