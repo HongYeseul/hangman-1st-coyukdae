@@ -8,7 +8,7 @@ export default function Hangman(){
         imgs: [0, 1, 2, 3, 4, 5, 6]
     }
     let [정답, 정답변경] = useState('hello');
-    let 추측알파벳 = new Set();
+    let [추측알파벳, 추측알파벳추가] = useState(new Set());
 
     let [행맨상태, 행맨상태변경] = useState(0);
     let [틀린횟수, 틀린횟수변경] = useState(0)
@@ -21,9 +21,11 @@ export default function Hangman(){
     function ABCbuttonClick(abc, props){
         btnDisabled(abc)
         let 알파벳배열 = 정답.split("")
-        guessWord(알파벳배열, abc)
-        props.행맨상태변경(abc)
-        console.log("click", abc)
+        // props.행맨상태변경(abc)
+        if(!알파벳배열.includes(abc)){
+            틀린횟수변경(틀린횟수+1);
+        }
+        추측알파벳추가(추측알파벳.add(abc));
     }
 
     function guessedWord() {
@@ -62,9 +64,6 @@ export default function Hangman(){
                     <p className="hangman-word">{guessedWord()}</p>
                     <p className="hangman-btns">{generateButtons()}</p>
                 </div>
-                
-            
-            
             )
             }
 
@@ -74,13 +73,6 @@ export default function Hangman(){
 function btnDisabled(abc)  {
     const target = document.getElementById('btn_'+abc);
     target.disabled = true;
-}
-
-
-function guessWord(알파벳배열, abc){
-    if(알파벳배열.includes(abc)){
-
-    }
 }
 
 function handleGuess(evt) {
