@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 
+import img0 from "./imgs/hangman-1.jpg";
+import img1 from "./imgs/hangman-2.jpg";
+import img2 from "./imgs/hangman-3.jpg";
+import img3 from "./imgs/hangman-4.jpg";
+import img4 from "./imgs/hangman-5.jpg";
+import img5 from "./imgs/hangman-6.jpg";
+import img6 from "./imgs/hangman-7.jpg";
+import img7 from "./imgs/hangman-8.jpg";
+import img8 from "./imgs/hangman-9.jpg";
+
 
 export default function Hangman(){
 
-    const hangmanImgs = {
-        maxWrong: 6,
-        imgs: [0, 1, 2, 3, 4, 5, 6]
-    }
+    const images = [img0, img1, img2, img3, img4, img5, img6, img7, img8]
     let [정답, 정답변경] = useState('hello');
     let [추측알파벳, 추측알파벳추가] = useState(new Set());
 
@@ -50,7 +57,7 @@ export default function Hangman(){
     return(
         <div className="hangman">
             <h1>Hangman</h1>
-            <h1>{행맨상태}</h1>
+            <img src={images[틀린횟수]} style={{width:"20%"}}></img>
 
             { 정답 === guessedWord().join("") ? <p>You WIN!</p> :
 
@@ -73,13 +80,4 @@ export default function Hangman(){
 function btnDisabled(abc)  {
     const target = document.getElementById('btn_'+abc);
     target.disabled = true;
-}
-
-function handleGuess(evt) {
-    let ltr = evt.target.value;
-
-        this.setState(st => ({
-        guessed: st.guessed.add(ltr),
-        nWrong: st.nWrong + (st.answer.includes(ltr) ? 0 : 1)
-        }));
 }
