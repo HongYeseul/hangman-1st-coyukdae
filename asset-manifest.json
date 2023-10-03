@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/hangman-1st-koyukdae/static/css/main.073c9b0a.css",
-    "main.js": "/hangman-1st-koyukdae/static/js/main.77b8e011.js",
-    "static/js/787.20ace30e.chunk.js": "/hangman-1st-koyukdae/static/js/787.20ace30e.chunk.js",
-    "static/media/hangman-9.jpg": "/hangman-1st-koyukdae/static/media/hangman-9.d6e5fd92a8deff531411.jpg",
-    "static/media/hangman-8.jpg": "/hangman-1st-koyukdae/static/media/hangman-8.277ff800ed2fcf749d1e.jpg",
-    "static/media/hangman-7.jpg": "/hangman-1st-koyukdae/static/media/hangman-7.7a94d3fb9dffe796301d.jpg",
-    "static/media/hangman-6.jpg": "/hangman-1st-koyukdae/static/media/hangman-6.0d001c527467ac9ce7f4.jpg",
-    "static/media/hangman-5.jpg": "/hangman-1st-koyukdae/static/media/hangman-5.73b11c89dfaed89209c0.jpg",
-    "static/media/hangman-4.jpg": "/hangman-1st-koyukdae/static/media/hangman-4.a645dba756c3ce7c64f4.jpg",
-    "static/media/hangman-3.jpg": "/hangman-1st-koyukdae/static/media/hangman-3.0872661d29beb13393c1.jpg",
-    "static/media/hangman-2.jpg": "/hangman-1st-koyukdae/static/media/hangman-2.10916b2d581f7937c1ea.jpg",
-    "static/media/hangman-1.jpg": "/hangman-1st-koyukdae/static/media/hangman-1.ffc3b44843f6bb7a44ff.jpg",
-    "index.html": "/hangman-1st-koyukdae/index.html",
-    "main.073c9b0a.css.map": "/hangman-1st-koyukdae/static/css/main.073c9b0a.css.map",
-    "main.77b8e011.js.map": "/hangman-1st-koyukdae/static/js/main.77b8e011.js.map",
-    "787.20ace30e.chunk.js.map": "/hangman-1st-koyukdae/static/js/787.20ace30e.chunk.js.map"
+    "main.css": "/hangman-1st-coyukdae/static/css/main.073c9b0a.css",
+    "main.js": "/hangman-1st-coyukdae/static/js/main.25d4b979.js",
+    "static/js/787.20ace30e.chunk.js": "/hangman-1st-coyukdae/static/js/787.20ace30e.chunk.js",
+    "static/media/hangman-9.jpg": "/hangman-1st-coyukdae/static/media/hangman-9.d6e5fd92a8deff531411.jpg",
+    "static/media/hangman-8.jpg": "/hangman-1st-coyukdae/static/media/hangman-8.277ff800ed2fcf749d1e.jpg",
+    "static/media/hangman-7.jpg": "/hangman-1st-coyukdae/static/media/hangman-7.7a94d3fb9dffe796301d.jpg",
+    "static/media/hangman-6.jpg": "/hangman-1st-coyukdae/static/media/hangman-6.0d001c527467ac9ce7f4.jpg",
+    "static/media/hangman-5.jpg": "/hangman-1st-coyukdae/static/media/hangman-5.73b11c89dfaed89209c0.jpg",
+    "static/media/hangman-4.jpg": "/hangman-1st-coyukdae/static/media/hangman-4.a645dba756c3ce7c64f4.jpg",
+    "static/media/hangman-3.jpg": "/hangman-1st-coyukdae/static/media/hangman-3.0872661d29beb13393c1.jpg",
+    "static/media/hangman-2.jpg": "/hangman-1st-coyukdae/static/media/hangman-2.10916b2d581f7937c1ea.jpg",
+    "static/media/hangman-1.jpg": "/hangman-1st-coyukdae/static/media/hangman-1.ffc3b44843f6bb7a44ff.jpg",
+    "index.html": "/hangman-1st-coyukdae/index.html",
+    "main.073c9b0a.css.map": "/hangman-1st-coyukdae/static/css/main.073c9b0a.css.map",
+    "main.25d4b979.js.map": "/hangman-1st-coyukdae/static/js/main.25d4b979.js.map",
+    "787.20ace30e.chunk.js.map": "/hangman-1st-coyukdae/static/js/787.20ace30e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.77b8e011.js"
+    "static/js/main.25d4b979.js"
   ]
 }
