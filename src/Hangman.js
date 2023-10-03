@@ -15,11 +15,12 @@ import img8 from "./imgs/hangman-9.jpg";
 export default function Hangman(){
 
     const images = [img0, img1, img2, img3, img4, img5, img6, img7, img8]
-    let [정답, 정답변경] = useState(randomWord());
+    let [정답, 정답변경] = useState();
     let [추측알파벳, 추측알파벳추가] = useState(new Set());
     let [알파벳맞췄을때reload, 알파벳맞췄을때reload변경] = useState(0);
 
     let [틀린횟수, 틀린횟수변경] = useState(0)
+    let [단어선택번호, 단어선택번호변경] = useState(0);
     
     // resetGame(){
     //     this.setState({
@@ -33,7 +34,6 @@ export default function Hangman(){
             틀린횟수변경(틀린횟수+1);
         }
         알파벳맞췄을때reload변경(알파벳맞췄을때reload+1)
-        console.log("추측 알파벳: ", 추측알파벳);
         btnDisabled(abc)
     }
 
@@ -56,30 +56,54 @@ export default function Hangman(){
         ))
     }
 
+    function selectWordBtnClick(index){
+        단어선택번호변경(index)
+        let arr = [randomWord(), randomWord(), randomWord()]
+        정답변경(arr[단어선택번호])
+    }
+
+    function selectWord(){
+        return "abc".split("").map((abc, index) => (
+            <button
+            key={index}
+            value={index}
+            id={"btn_"+index}
+            onClick={(e)=>selectWordBtnClick(index)}
+            >
+            {index+1}
+            </button>
+        ))
+    }
+
     return(
         <div className="hangman">
             <h1>Hangman</h1>
             <img src={images[틀린횟수]} style={{width:"20%"}}></img>
-
             {
-            정답 === guessedWord().join("") ? 
-                <div>
-                    <p>You WIN!</p> 
-                    <p>Correct Word is: {정답}</p>
-                </div>
-            :
-
-            (틀린횟수 === 8 ?
-                <div>
-                <p>YOU LOSE </p>
-                <p>Correct Word is: {정답}</p>
-                </div>
-                :
+                단어선택번호 === 0 ?
                     <div>
-                        <p className="hangman-word">{guessedWord()}</p>
-                        <p className="hangman-btns">{generateButtons()}</p>
+                        <p>단어를 선택하세요!</p>
+                        <p className="select-word">{selectWord()}</p>
                     </div>
-            )
+                    :
+                정답 === guessedWord().join("") ? 
+                    <div>
+                        <p>You WIN!</p> 
+                        <p>Correct Word is: {정답}</p>
+                    </div>
+                :
+
+                (틀린횟수 === 8 ?
+                    <div>
+                    <p>YOU LOSE </p>
+                    <p>Correct Word is: {정답}</p>
+                    </div>
+                    :
+                        <div>
+                            <p className="hangman-word">{guessedWord()}</p>
+                            <p className="hangman-btns">{generateButtons()}</p>
+                        </div>
+                )
             }
 
         </div>
