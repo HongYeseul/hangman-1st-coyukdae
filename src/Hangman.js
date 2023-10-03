@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { randomWord } from "./RandomWord";
+import ConfettiExplosion,  { ConfettiProps } from 'react-confetti-explosion';
+import "./Hangman.css"
 
 import img0 from "./imgs/hangman-1.jpg";
 import img1 from "./imgs/hangman-2.jpg";
@@ -11,6 +13,13 @@ import img6 from "./imgs/hangman-7.jpg";
 import img7 from "./imgs/hangman-8.jpg";
 import img8 from "./imgs/hangman-9.jpg";
 
+const largeProps= {
+    force: 0.8,
+    duration: 3000,
+    particleCount: 300,
+    width: 3000,
+    colors: ['#041E43', '#1471BF', '#5BB4DC', '#FC027B', '#66D805'],
+};
 
 export default function Hangman(){
 
@@ -21,6 +30,8 @@ export default function Hangman(){
 
     let [틀린횟수, 틀린횟수변경] = useState(0)
     let [단어선택번호, 단어선택번호변경] = useState(-1);
+
+    const [isExploding, setIsExploding] = useState(false);
     
     // resetGame(){
     //     this.setState({
@@ -50,6 +61,7 @@ export default function Hangman(){
             value={abc}
             id={"btn_"+abc}
             onClick={(e)=>ABCbuttonClick(abc)}
+            className="button btnPush btnBlueGreen"
             >
             {abc}
             </button>
@@ -60,7 +72,6 @@ export default function Hangman(){
         단어선택번호변경(index)
         let arr = [randomWord(), randomWord(), randomWord()]
         정답변경(arr[index])
-        console.log(index)
     }
 
     function selectWord(){
@@ -70,34 +81,43 @@ export default function Hangman(){
             value={index}
             id={"btn_"+index}
             onClick={(e)=>selectWordBtnClick(index)}
+            className="button btnPush btnBlueGreen"
             >
             {index+1}
             </button>
         ))
     }
 
+    function setConfetti(){
+        
+    }
+
     return(
         <div className="hangman">
-            <h1>Hangman</h1>
-            <img src={images[틀린횟수]} style={{width:"40%"}}></img>
+            <h1>Hangman</h1> 
+            <img src={images[틀린횟수]} style={{width:"30%"}}></img>
             {
                 단어선택번호 < 0 ?
-                    <div>
+                    <div className="select-word">
                         <p>단어를 선택하세요!</p>
-                        <p className="select-word">{selectWord()}</p>
+                        <p>{selectWord()}</p>
                     </div>
                     :
                 정답 === guessedWord().join("") ? 
                     <div>
-                        <p>You WIN!</p> 
-                        <p>Correct Word is: {정답}</p>
+                        <p> <h1>성공! </h1> </p>
+                        <p> <h3>정답: {정답}</h3> </p>
+                            { <div className="confetti">
+                                <ConfettiExplosion {...largeProps} />
+                            </div> 
+                            }
                     </div>
                 :
 
                 (틀린횟수 === 8 ?
                     <div>
-                    <p>YOU LOSE </p>
-                    <p>Correct Word is: {정답}</p>
+                    <p> <h1>실패!</h1> </p>
+                    <p> <h3>정답: {정답}</h3> </p>
                     </div>
                     :
                         <div>
