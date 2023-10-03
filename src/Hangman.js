@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { randomWord } from "./RandomWord";
-import ConfettiExplosion,  { ConfettiProps } from 'react-confetti-explosion';
+import ConfettiExplosion from 'react-confetti-explosion';
 import "./Hangman.css"
 
 import img0 from "./imgs/hangman-1.jpg";
@@ -31,13 +31,6 @@ export default function Hangman(){
     let [틀린횟수, 틀린횟수변경] = useState(0)
     let [단어선택번호, 단어선택번호변경] = useState(-1);
 
-    const [isExploding, setIsExploding] = useState(false);
-    
-    // resetGame(){
-    //     this.setState({
-    //         nWrong: 0
-    //     })
-    // }
     function ABCbuttonClick(abc){
         let 알파벳배열 = 정답.split("")
         추측알파벳추가(추측알파벳.add(abc));
