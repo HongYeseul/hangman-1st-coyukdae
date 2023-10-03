@@ -5,7 +5,7 @@
 
 ---
 ### 개발 스택
-\:  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
 
 ---
 ### 대회에서 요구한 기능
