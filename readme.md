@@ -1,5 +1,6 @@
 # 행맨 게임
 [2023 항해 플러스: 제1회 코육대](https://hanghaeplus-coyukdae.oopy.io/#1b467c7185e94a3295dc4a72a05ea3b2) 출전을 위해 만들어진 웹사이트입니다.
+
 만들어진 웹사이트는 [이곳](https://hongyeseul.github.io/hangman-1st-coyukdae/)에서 볼 수 있습니다.
 
 ---
@@ -36,4 +37,6 @@
   <img src="https://github.com/HongYeseul/hangman-1st-coyukdae/assets/50395809/f6bf7a9c-fc3a-4fef-912e-2d4bb7194dbc" align="center" width="32%">
   <img src="https://github.com/HongYeseul/hangman-1st-coyukdae/assets/50395809/10e93613-4233-4d50-ae7f-6eea3f7512a6" align="center" width="32%">
 </p>
-좌측부터 행맨 구하기 성공했을 때, 실패했을 때, 재시작 버튼 눌렀을 때 나타나는 화면(모바일에서 촬영)
+
+
+좌측부터 행맨 구하기 성공했을 때, 실패했을 때, 재시작 버튼 눌렀을 때 나타나는 화면(각각 모바일에서 촬영)
