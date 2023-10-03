@@ -20,7 +20,7 @@ export default function Hangman(){
     let [알파벳맞췄을때reload, 알파벳맞췄을때reload변경] = useState(0);
 
     let [틀린횟수, 틀린횟수변경] = useState(0)
-    let [단어선택번호, 단어선택번호변경] = useState(0);
+    let [단어선택번호, 단어선택번호변경] = useState(-1);
     
     // resetGame(){
     //     this.setState({
@@ -59,7 +59,8 @@ export default function Hangman(){
     function selectWordBtnClick(index){
         단어선택번호변경(index)
         let arr = [randomWord(), randomWord(), randomWord()]
-        정답변경(arr[단어선택번호])
+        정답변경(arr[index])
+        console.log(index)
     }
 
     function selectWord(){
@@ -78,9 +79,9 @@ export default function Hangman(){
     return(
         <div className="hangman">
             <h1>Hangman</h1>
-            <img src={images[틀린횟수]} style={{width:"20%"}}></img>
+            <img src={images[틀린횟수]} style={{width:"40%"}}></img>
             {
-                단어선택번호 === 0 ?
+                단어선택번호 < 0 ?
                     <div>
                         <p>단어를 선택하세요!</p>
                         <p className="select-word">{selectWord()}</p>
