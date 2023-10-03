@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { randomWord } from "./RandomWord";
 
 import img0 from "./imgs/hangman-1.jpg";
 import img1 from "./imgs/hangman-2.jpg";
@@ -14,7 +15,7 @@ import img8 from "./imgs/hangman-9.jpg";
 export default function Hangman(){
 
     const images = [img0, img1, img2, img3, img4, img5, img6, img7, img8]
-    let [정답, 정답변경] = useState('apple');
+    let [정답, 정답변경] = useState(randomWord());
     let [추측알파벳, 추측알파벳추가] = useState(new Set());
     let [알파벳맞췄을때reload, 알파벳맞췄을때reload변경] = useState(0);
 
