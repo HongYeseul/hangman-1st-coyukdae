@@ -24,6 +24,17 @@
     background: #00AE68;
 }
 
+.reloadBtn{
+    margin-left: 10px;
+    font-size: 25px;
+    background-color: white;
+    border: none;
+}
+
+.reloadBtn:hover {
+    background: gray;
+}
+
 .button:disabled,
 .btnBlueGreen.btnPush:hover {
     box-shadow: 0px 0px 0px 0px #007144;

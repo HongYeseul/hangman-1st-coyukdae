@@ -88,18 +88,29 @@ export default function Hangman(){
         ))
     }
 
-    function setConfetti(){
-        
+    function reloadBtnClick(){
+        틀린횟수변경(0);
+        단어선택번호변경(-1)
+        추측알파벳추가(new Set())
     }
 
     return(
         <div className="hangman">
-            <h1>Hangman</h1> 
+            <h1>Hangman
+                <button
+                id={"btn_reload"}
+                onClick={(e)=>reloadBtnClick()}
+                className="reloadBtn"
+                >
+                🔄
+                </button>
+            </h1> 
             <img src={images[틀린횟수]} style={{width:"30%"}}></img>
+
             {
                 단어선택번호 < 0 ?
                     <div className="select-word">
-                        <p>단어를 선택하세요!</p>
+                        <p><h3>단어를 선택하세요!</h3></p>
                         <p>{selectWord()}</p>
                     </div>
                     :
@@ -126,6 +137,7 @@ export default function Hangman(){
                         </div>
                 )
             }
+
 
         </div>
     );
