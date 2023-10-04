@@ -40,3 +40,10 @@
 
 
 좌측부터 행맨 구하기 성공했을 때, 실패했을 때, 재시작 버튼 눌렀을 때 나타나는 화면(각각 모바일에서 촬영)
+
+---
+### 행맨 게임 구경하기
+- 행맨 게임을 하고 싶다면?
+	[→ Github Page(행맨 게임하기)](https://hongyeseul.github.io/hangman-1st-coyukdae/)
+- 회고록이 궁금하다면?
+	[→ Velog](https://velog.io/@yeseul/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%95%AD%ED%95%B4-%ED%94%8C%EB%9F%AC%EC%8A%A4-%EC%A0%9C1%ED%9A%8C-%EC%BD%94%EC%9C%A1%EB%8C%80-%ED%96%89%EB%A7%A8-%EB%A7%8C%EB%93%A4%EA%B8%B0)
